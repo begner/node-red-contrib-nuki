@@ -197,6 +197,12 @@ module.exports = function(RED) {
               return;
             });
           });
+        } else if (payload.topic.toLowerCase() === 'lastknownstate') {
+          currentNuki.lastKnownState().then(function(response) {
+            msg.payload = response;
+            underControl.send(msg);
+            return;
+          });
         } else if (payload.topic.toLowerCase() === 'lockstatus') {
           currentNuki.lockState().then(function(lockState) {
             const state = getLockState(lockState);
