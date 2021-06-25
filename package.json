@@ -15,7 +15,7 @@
     }
   },
   "dependencies": {
-    "nuki-bridge-api": "^1.7.0"
+    "nuki-bridge-api": "file:../nuki-bridge-api"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
